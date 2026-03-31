@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Build Current — The Agency</title>
+<title>Aria Skills for Build — The Agency</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root {
+:root {
     --bg: #1C1917;
     --bg-card: #231F1C;
     --bg-raised: #2C2724;
@@ -830,59 +830,35 @@
     pointer-events: none;
   }
 
-  /* ── STANDARDS PAGE STYLES ── */
-  .std-section {
+  /* ── SKILLS PAGE STYLES ── */
+  .sk-section {
     margin-bottom: 48px;
   }
-  .std-section-num {
+  .sk-section-num {
     font-family: 'Geist Mono', monospace;
     font-size: 11px;
     color: var(--amber-dim);
     font-weight: 500;
   }
-  .std-section-title {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 8px;
-    letter-spacing: -0.02em;
-  }
-  .std-subsection {
-    margin-top: 28px;
-    margin-bottom: 20px;
-  }
-  .std-sub-id {
-    font-family: 'Geist Mono', monospace;
-    font-size: 10px;
-    color: var(--amber-dim);
-    font-weight: 500;
-    margin-bottom: 2px;
-  }
-  .std-sub-title {
-    font-size: 15px;
-    font-weight: 700;
-    color: var(--text);
-    margin-bottom: 8px;
-  }
-  .std-body {
+  .sk-body {
     font-size: 13px;
     color: var(--text-muted);
     line-height: 1.7;
   }
-  .std-body p {
+  .sk-body p {
     margin-bottom: 10px;
   }
-  .std-body ul, .std-body ol {
+  .sk-body ul, .sk-body ol {
     margin: 8px 0 12px 20px;
   }
-  .std-body li {
+  .sk-body li {
     margin-bottom: 5px;
   }
-  .std-body strong {
+  .sk-body strong {
     color: var(--text);
     font-weight: 600;
   }
-  .std-body code {
+  .sk-body code {
     font-family: 'Geist Mono', monospace;
     font-size: 12px;
     background: var(--amber-glow);
@@ -891,51 +867,336 @@
     border-radius: 4px;
     border: 1px solid rgba(245,158,11,0.15);
   }
-  .std-callout {
-    background: var(--bg-card);
-    border-left: 3px solid var(--amber-dim);
-    border-radius: 0 8px 8px 0;
-    padding: 14px 18px;
-    margin: 12px 0;
-    font-size: 12px;
-    color: var(--text-muted);
-    font-style: italic;
-    line-height: 1.6;
+  .sk-subsection {
+    margin-top: 28px;
+    margin-bottom: 20px;
   }
-  .std-format-block {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 14px 18px;
-    margin: 12px 0;
+  .sk-sub-id {
     font-family: 'Geist Mono', monospace;
-    font-size: 11.5px;
-    color: var(--text-muted);
-    line-height: 1.7;
+    font-size: 10px;
+    color: var(--amber-dim);
+    font-weight: 500;
+    margin-bottom: 2px;
   }
-  .std-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px 24px;
-    margin: 12px 0;
-  }
-  .std-card h4 {
-    font-size: 13px;
+  .sk-sub-title {
+    font-size: 15px;
     font-weight: 700;
     color: var(--text);
     margin-bottom: 8px;
   }
-  .std-use-for {
+
+  /* ── PURPOSE BLOCK (mission-style) ── */
+  .sk-purpose {
+    background: var(--bg-card);
+    border: 1px solid var(--border-amber);
+    border-left: 3px solid var(--amber);
+    border-radius: 10px;
+    padding: 28px 32px;
+    margin-bottom: 16px;
+  }
+  .sk-purpose p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+  .sk-purpose p:last-child { margin-bottom: 0; }
+  .sk-purpose strong { color: var(--text); }
+
+  /* ── TIER CARDS ── */
+  .sk-tier-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+  }
+  .sk-tier-card.tier-1 { border-left: 4px solid var(--amber); }
+  .sk-tier-card.tier-2 { border-left: 4px solid var(--blue); }
+  .sk-tier-card.tier-3 { border-left: 4px solid var(--text-dim); }
+  .sk-tier-card.tier-4 { border-left: 4px solid var(--red); }
+  .sk-tier-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+  }
+  .sk-tier-badge.t1 { background: var(--amber-glow); color: var(--amber); border: 1px solid var(--border-amber); }
+  .sk-tier-badge.t2 { background: rgba(59,130,246,0.12); color: #93C5FD; border: 1px solid rgba(59,130,246,0.2); }
+  .sk-tier-badge.t3 { background: rgba(120,113,108,0.15); color: var(--text-muted); border: 1px solid var(--border); }
+  .sk-tier-badge.t4 { background: rgba(239,68,68,0.12); color: #F87171; border: 1px solid rgba(239,68,68,0.2); }
+  .sk-tier-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .sk-tier-desc {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  /* ── SKILL GROUP CARD ── */
+  .sk-group {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin-bottom: 16px;
+  }
+  .sk-group-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 12px;
+  }
+  .sk-skill-list {
+    list-style: none;
+    margin: 0 0 14px 0;
+    padding: 0;
+  }
+  .sk-skill-list li {
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 4px 0;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+  }
+  .sk-skill-list li code {
+    font-family: 'Geist Mono', monospace;
+    font-size: 11px;
+    background: var(--amber-glow);
+    color: var(--amber);
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid rgba(245,158,11,0.15);
+    flex-shrink: 0;
+  }
+  .sk-skill-list li .sk-skill-desc {
+    color: var(--text-dim);
+    font-size: 11px;
+  }
+  .sk-use-for {
     font-size: 11px;
     font-weight: 600;
     color: var(--amber-dim);
     letter-spacing: 0.06em;
     text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .sk-use-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .sk-use-list li {
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 2px 0 2px 14px;
+    position: relative;
+  }
+  .sk-use-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--amber-dim);
+    font-size: 10px;
+  }
+  .sk-special-note {
+    background: var(--amber-glow-sm);
+    border: 1px solid var(--border-amber);
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-top: 14px;
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+  .sk-special-note strong { color: var(--amber); }
+  .sk-boundary-note {
+    font-size: 12px;
+    color: var(--text-dim);
+    font-style: italic;
     margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+  .sk-boundary-note strong { color: var(--text-muted); font-style: normal; }
+
+  /* ── DEFAULTS LIST (numbered, prominent) ── */
+  .sk-defaults {
+    background: var(--bg-card);
+    border: 1px solid var(--border-amber);
+    border-radius: 10px;
+    padding: 28px 32px;
+    counter-reset: defaults;
+  }
+  .sk-defaults-item {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .sk-defaults-item:last-child { border-bottom: none; }
+  .sk-defaults-num {
+    font-family: 'Geist Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--amber);
+    min-width: 24px;
+    text-align: right;
+    flex-shrink: 0;
+  }
+  .sk-defaults-item code {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    background: var(--amber-glow);
+    color: var(--amber);
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid rgba(245,158,11,0.15);
+  }
+  .sk-defaults-extra {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-amber);
+    font-size: 13px;
+    color: var(--text-muted);
+  }
+  .sk-defaults-extra p { margin-bottom: 6px; }
+  .sk-defaults-extra code {
+    font-family: 'Geist Mono', monospace;
+    font-size: 12px;
+    background: var(--amber-glow);
+    color: var(--amber);
+    padding: 2px 7px;
+    border-radius: 4px;
+    border: 1px solid rgba(245,158,11,0.15);
+  }
+
+  /* ── WARNING / CAUTION BLOCK ── */
+  .sk-warning {
+    background: rgba(239,68,68,0.06);
+    border: 1px solid rgba(239,68,68,0.2);
+    border-left: 4px solid var(--red);
+    border-radius: 10px;
+    padding: 22px 26px;
+    margin-bottom: 14px;
+  }
+  .sk-warning-header {
+    font-size: 12px;
+    font-weight: 700;
+    color: #F87171;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .sk-warning .sk-body { font-size: 13px; }
+
+  /* ── CARE CARD ── */
+  .sk-care-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--red);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+  }
+  .sk-care-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .sk-care-why {
+    font-size: 12px;
+    color: var(--text-dim);
+    font-style: italic;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* ── RESPONSIBILITY MAPPING ── */
+  .sk-resp-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-bottom: 14px;
+  }
+  .sk-resp-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .sk-resp-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--amber-dim);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
     margin-bottom: 4px;
   }
-  .std-closing {
+
+  /* ── TRAINING PHASES ── */
+  .sk-phase {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  .sk-phase-num {
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--amber-glow);
+    border: 2px solid var(--amber);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Geist Mono', monospace;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--amber);
+  }
+  .sk-phase-content {
+    flex: 1;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 18px 22px;
+  }
+  .sk-phase-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+  .sk-phase-sub {
+    font-size: 11px;
+    color: var(--text-dim);
+    margin-bottom: 10px;
+  }
+  .sk-phase-connector {
+    width: 2px;
+    height: 12px;
+    background: var(--border-amber);
+    margin: 0 0 0 19px;
+  }
+
+  /* ── CLOSING ── */
+  .sk-closing {
     background: var(--bg-card);
     border: 1px solid var(--border-amber);
     border-left: 3px solid var(--amber);
@@ -943,19 +1204,14 @@
     padding: 28px 32px;
     margin-top: 40px;
   }
-  .std-closing p {
+  .sk-closing p {
     font-size: 14px;
     color: var(--text-muted);
     line-height: 1.7;
     margin-bottom: 12px;
   }
-  .std-closing strong { color: var(--text); }
-  .std-closing .closing-last {
-    font-size: 13px;
-    color: var(--text-dim);
-    font-style: italic;
-    margin-bottom: 0;
-  }
+  .sk-closing p:last-child { margin-bottom: 0; }
+  .sk-closing strong { color: var(--text); }
 
   @media print {
     .site-nav { display: none; }
@@ -968,12 +1224,11 @@
 
     <nav class="site-nav">
       <a href="index.html">Build Defined</a>
-      <a href="rubric.html" class="active">Build Rubric</a>
+      <a href="rubric.html">Build Rubric</a>
       <a href="standards.html">Standards &amp; Practices</a>
-      <a href="skills.html">Aria Skills for Build</a>
+      <a href="skills.html" class="active">Aria Skills for Build</a>
       <a class="coming-soon">Appendix: Skills Index</a>
     </nav>
-
 
   <!-- ── HEADER ── -->
   <header class="header">
@@ -983,785 +1238,637 @@
     <div class="header-text">
       <div class="agency-label">The Agency · AI-Native Agency by Symph</div>
       <h1 class="header-title">Build</h1>
-      <p class="header-sub">AI Product Engineering · Craft &amp; Delivery Engine</p>
+      <p class="header-sub">Aria Skills for Build</p>
     </div>
     <div class="header-meta">
-      <strong>v2.0 Draft</strong><br>
-      March 27, 2026<br>
-      Tom<br>
-      Lead AI Product Engineer<br>
-      <br>
-      Reviewer: David<br>
-      Principal AI Product Engineer
+      <strong>v2.1 Draft</strong><br>
+      March 31, 2026<br>
+      Build Current<br>
     </div>
   </header>
 
-  <!-- ── PRIORITIZATION FRAMEWORK ── -->
-  <section class="section">
-    <div class="section-label">Prioritization Framework</div>
-    <div style="font-size:13px; color:var(--text-muted); margin-bottom:16px; line-height:1.7;">
-      Before diving into competencies, Build uses an effort-vs-impact lens to decide what to work on:
-    </div>
-    <div class="matrix-grid">
-      <div class="matrix-corner"></div>
-      <div class="matrix-col-header">Low Effort</div>
-      <div class="matrix-col-header">High Effort</div>
-      <div class="matrix-row-header">High Impact</div>
-      <div class="matrix-cell priority-1"><strong>1. Easy wins.</strong>Ship it. Build skills.</div>
-      <div class="matrix-cell priority-2"><strong>2. Experiment.</strong>Refine existing process. Worth the investment.</div>
-      <div class="matrix-row-header">Low Impact</div>
-      <div class="matrix-cell priority-3"><strong>3. Rethink the work itself.</strong>Is this even needed?</div>
-      <div class="matrix-cell priority-skip"><strong>Skip.</strong>Don’t waste the cycle.</div>
-    </div>
-    <div class="matrix-apply">
-      Apply this when deciding:
-      <ul>
-        <li>Which Fluid customizations to templatize into Flexi</li>
-        <li>Which internal tools to build vs. buy</li>
-        <li>Where to invest PE time vs. let agents handle it</li>
+  <!-- ── PURPOSE ── -->
+  <section class="sk-section">
+    <div class="section-label">Purpose</div>
+    <div class="sk-purpose">
+      <p><strong>This document translates Aria's full skill roster into a Build-first operating guide.</strong></p>
+      <p>It answers three practical questions:</p>
+      <ul style="margin: 8px 0 12px 20px; list-style: disc;">
+        <li>Which Aria skills matter most for Build?</li>
+        <li>When should Build use them?</li>
+        <li>Which skills are useful but not core to Build ownership?</li>
       </ul>
+      <p>This is <strong>not</strong> the full encyclopedia.<br>For the full inventory, use <strong>Aria Skills Index</strong>.</p>
     </div>
   </section>
 
-  <!-- ── RUBRIC OVERVIEW ── -->
-  <section class="section">
-    <div class="section-label">Competency Rubric — Overview</div>
-    <div class="rubric-overview">
-      <div class="rubric-overview-header">
-        <span>Competency</span>
-        <span>Unacceptable</span>
-        <span>Capable</span>
-        <span>Adoptive ✓</span>
-        <span>Transformative</span>
-      </div>
-
-      <!-- General -->
-      <div class="rubric-row general-divider">
-        <div><div class="rubric-comp-name">Knowledge Sharing</div><div class="rubric-comp-type">General · All currents</div></div>
-        <div class="tier-cell"><span class="tier-pill tier-u">Hoards</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-c">Shares when asked</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-target">Proactively shares</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-t">Creates systems</span></div>
-      </div>
-      <div class="rubric-row general-divider">
-        <div><div class="rubric-comp-name">Cross-Current Collaboration</div><div class="rubric-comp-type">General · All currents</div></div>
-        <div class="tier-cell"><span class="tier-pill tier-u">Works in silo</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-c">Cooperates</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-target">Partners actively</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-t">Bridges currents</span></div>
-      </div>
-
-      <!-- Build-specific -->
-      <div class="rubric-row">
-        <div><div class="rubric-comp-name">Aria &amp; Agent Workflow <span class="rocket">🚀</span></div><div class="rubric-comp-type">Build-specific · FD: Capable min.</div></div>
-        <div class="tier-cell"><span class="tier-pill tier-u">Avoids agents</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-c">Uses to scaffold</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-target">Designs prompts</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-t">Pushes limits</span></div>
-      </div>
-      <div class="rubric-row">
-        <div><div class="rubric-comp-name">Delivery &amp; Shipping <span class="rocket">🚀</span></div><div class="rubric-comp-type">Build-specific · FD: Adoptive min.</div></div>
-        <div class="tier-cell"><span class="tier-pill tier-u">Misses deadlines</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-c">On time, supervised</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-target">Ships independently</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-t">Sets the pace</span></div>
-      </div>
-      <div class="rubric-row">
-        <div><div class="rubric-comp-name">Technical Judgment</div><div class="rubric-comp-type">Build-specific</div></div>
-        <div class="tier-cell"><span class="tier-pill tier-u">No tradeoffs</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-c">Sound decisions</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-target">Strong arch. calls</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-t">Shapes portfolio</span></div>
-      </div>
-      <div class="rubric-row">
-        <div><div class="rubric-comp-name">Documentation &amp; Context</div><div class="rubric-comp-type">Build-specific</div></div>
-        <div class="tier-cell"><span class="tier-pill tier-u">No docs</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-c">Exists, current</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-target">Always current</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-t">Sets standard</span></div>
-      </div>
-      <div class="rubric-row">
-        <div><div class="rubric-comp-name">Product Thinking</div><div class="rubric-comp-type">Build-specific</div></div>
-        <div class="tier-cell"><span class="tier-pill tier-u">Code monkey</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-c">Knows the why</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-target">Proposes solutions</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-t">Shapes direction</span></div>
-      </div>
-      <div class="rubric-row">
-        <div><div class="rubric-comp-name">Client Communication <span class="rocket">🚀</span></div><div class="rubric-comp-type">Build-specific · FD: Adoptive min.</div></div>
-        <div class="tier-cell"><span class="tier-pill tier-u">Avoids clients</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-c">Can explain work</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-target">Demos confidently</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-t">Clients request them</span></div>
-      </div>
-      <div class="rubric-row">
-        <div><div class="rubric-comp-name">Customization Flywheel</div><div class="rubric-comp-type">Build-specific</div></div>
-        <div class="tier-cell"><span class="tier-pill tier-u">One-offs only</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-c">Reuses patterns</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-target">Designs for reuse</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-t">Drives the flywheel</span></div>
-      </div>
-      <div class="rubric-row">
-        <div><div class="rubric-comp-name">Solutions Architecture</div><div class="rubric-comp-type">Build-specific</div></div>
-        <div class="tier-cell"><span class="tier-pill tier-u">Project tunnel</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-c">Client context</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-target">Thinks in systems</span></div>
-        <div class="tier-cell"><span class="tier-pill tier-t">Architects ecosystems</span></div>
-      </div>
-    </div>
-    <div style="margin-top:10px; font-size:11px; color:var(--text-dim); font-style:italic; padding-left:4px;">Target state: Adoptive across all competencies. 🚀 = Forward Deploy gate. See full rubric below.</div>
-  </section>
-
-  <hr class="divider">
-
-  <!-- ── FULL RUBRIC ── -->
-  <section class="section">
-    <div class="section-label">Full Competency Rubric</div>
-    <div class="rubric-full">
-
-      <!-- 1.1 Knowledge Sharing -->
-      <div class="competency-card">
-        <div class="competency-header">
-          <div class="comp-number">1.1</div>
-          <div class="comp-name-block">
-            <div class="comp-name">Knowledge Sharing</div>
-            <div class="comp-question">Do you make the people around you better?</div>
-          </div>
-          <span class="comp-badge badge-general">General</span>
-        </div>
-        <div class="tiers-grid">
-          <div class="tier-block">
-            <div class="tier-block-label unacceptable">Unacceptable</div>
-            <div class="tier-body">
-              <p>Keeps learnings to themselves. Doesn't share discoveries, shortcuts, or patterns with the team.</p>
-              <p>Hoards context — only they understand their work.</p>
-              <p>Doesn't attend or contribute to retros, syncs, or team discussions.</p>
-            
-              <p class="tier-quote">I figured out a workaround but I didn’t post it anywhere — it’s kind of specific to my setup.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label capable">Capable</div>
-            <div class="tier-body">
-              <p>Shares learnings when asked. Will answer questions and help teammates troubleshoot when prompted.</p>
-              <p>Documents enough that others could follow if needed.</p>
-              <p>Participates in retros and syncs. Shares updates on their own work.</p>
-            
-              <p class="tier-quote">Yeah I ran into that too — here’s what I did, let me know if you need more detail.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label adoptive">Adoptive <span class="chip-inline chip-target-inline">Target</span></div>
-            <div class="tier-body">
-              <p>Proactively shares learnings without being asked. Posts discoveries in team channels, writes short guides, runs informal walkthroughs.</p>
-              <p>Actively teaches others what they've learned — not just what, but why and how.</p>
-              <p>Contributes insights that help others in retros. Connects dots across projects.</p>
-            
-              <p class="tier-quote">I wrote a quick guide on how I set up the Firebase auth flow — figured others might hit the same thing. Dropped it in the channel.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label transformative">Transformative</div>
-            <div class="tier-body">
-              <p>Creates systems for knowledge sharing. Establishes patterns that become team standards. Other PEs consistently reference their contributions.</p>
-              <p>Turns personal knowledge into organizational knowledge. The team is measurably better because of their contributions.</p>
-              <p>Drives the learning culture. Others adopt their sharing habits.</p>
-            
-              <p class="tier-quote">I set up a template for Aria context threads that the team’s been using — it cut onboarding time for new project handoffs by half.</p>
-            </div>
-          </div>
-        
-            </div>
-        <div class="comp-clue"><strong>Clue:</strong> At Unacceptable, you hear about their learnings only when you stumble into them. At Capable, they share when you ask. At Adoptive, you see their posts before you need to ask. At Transformative, the team’s baseline knowledge is higher because of them.</div>
-      </div>
-
-      <!-- 1.2 Cross-Current Collaboration -->
-      <div class="competency-card">
-        <div class="competency-header">
-          <div class="comp-number">1.2</div>
-          <div class="comp-name-block">
-            <div class="comp-name">Cross-Current Collaboration</div>
-            <div class="comp-question">Can you work effectively with people outside your current?</div>
-          </div>
-          <span class="comp-badge badge-general">General</span>
-        </div>
-        <div class="tiers-grid">
-          <div class="tier-block">
-            <div class="tier-block-label unacceptable">Unacceptable</div>
-            <div class="tier-body">
-              <p>Works in a silo. Doesn't engage with Taste reviews, ignores Agent feedback, disconnected from Growth's needs.</p>
-              <p>Views other currents as blockers or distractions.</p>
-              <p>Pushes back on Taste reviews defensively. Ships without Taste sign-off.</p>
-            
-              <p class="tier-quote">I don’t know why Taste needs to review this — it works fine and the client’s waiting.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label capable">Capable</div>
-            <div class="tier-body">
-              <p>Responds to cross-current requests. Accepts Taste feedback and implements it. Submits agent improvement requests when asked.</p>
-              <p>Understands other currents exist and cooperates when needed.</p>
-              <p>Accepts Taste reviews and incorporates feedback.</p>
-            
-              <p class="tier-quote">Taste had some feedback on the spacing — I’ll get those changes in today.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label adoptive">Adoptive <span class="chip-inline chip-target-inline">Target</span></div>
-            <div class="tier-body">
-              <p>Actively seeks out cross-current input. Reaches out to Taste early (not after the build). Feeds Agent useful patterns proactively. Understands what Growth is selling.</p>
-              <p>Sees other currents as partners. Adjusts their work to make others' jobs easier.</p>
-              <p>Invites Taste review early. Self-reviews against the quality bar before submission.</p>
-            
-              <p class="tier-quote">I looped in Taste before I started the UI — wanted to make sure we’re aligned on the look before I build it out.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label transformative">Transformative</div>
-            <div class="tier-body">
-              <p>Bridges currents. Shapes how Build interacts with other currents. Creates workflows or norms that improve cross-current handoffs. Other currents seek them out.</p>
-              <p>Thinks in systems. Sees how their Build decisions impact Growth's ability to sell, Taste's ability to review, and Agent's ability to improve.</p>
-              <p>Co-creates quality standards with Taste. Helps calibrate what "remarkable" means for their product.</p>
-            
-              <p class="tier-quote">I worked with Agent to standardize how we feed customization patterns back — now Aria picks up common toggles automatically.</p>
-            </div>
-          </div>
-        
-            </div>
-        <div class="comp-clue"><strong>Clue:</strong> At Unacceptable, other currents complain about them. At Capable, cross-current work happens but they don’t initiate it. At Adoptive, they reach out first. At Transformative, other currents actively seek them out.</div>
-      </div>
-
-      <!-- 2.1 Aria & Agent Workflow -->
-      <div class="competency-card">
-        <div class="competency-header">
-          <div class="comp-number">2.1</div>
-          <div class="comp-name-block">
-            <div class="comp-name">Aria &amp; Agent Workflow</div>
-            <div class="comp-question">How well do you operate in an agent-first build environment?</div>
-          </div>
-          <span class="comp-badge badge-build">Build</span>
-        </div>
-        <div class="tiers-grid">
-          <div class="tier-block">
-            <div class="tier-block-label unacceptable">Unacceptable</div>
-            <div class="tier-body">
-              <p>Treats Aria as optional or a novelty. Writes everything from scratch. Doesn't trust agent output.</p>
-              <p>Can't explain how they use agents in their workflow.</p>
-            
-              <p class="tier-quote">I tried Aria but it didn’t really get what I wanted, so I just coded it myself.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label capable">Capable <span class="chip-inline chip-fd-inline">FD Gate</span></div>
-            <div class="tier-body">
-              <p>Uses Aria to scaffold features and refine output. Can prompt effectively for standard tasks. Reviews and validates agent-generated code before shipping.</p>
-              <p>Can explain their prompting approach, how they review agent output, and where they intervene.</p>
-            
-              <p class="tier-quote">I use Aria to scaffold the base components, then I go through and clean up the output before pushing.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label adoptive">Adoptive <span class="chip-inline chip-target-inline">Target</span></div>
-            <div class="tier-body">
-              <p>Designs prompts strategically. Knows when to scaffold vs. refine vs. rewrite. Teaches Aria new patterns through well-structured context. Agent output quality improves because of their input.</p>
-              <p>Has a repeatable system for agent-assisted building. Can teach it to others.</p>
-            
-              <p class="tier-quote">I’ve got a prompting flow where I give Aria the data model first, then the UI spec, then edge cases — output quality is way higher when I break it up that way.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label transformative">Transformative</div>
-            <div class="tier-body">
-              <p>Pushes the boundary of what agents can do. Creates prompting patterns that other PEs adopt. Agent handles 90%+ of their scaffolding. Actively collaborates with Agent current to improve Aria's capabilities.</p>
-              <p>Their agent workflow becomes the team standard. Aria is measurably more capable on their projects.</p>
-            
-              <p class="tier-quote">I built a context-loading pattern that the team uses now — Aria went from needing 3–4 rounds of refinement to getting it right on the first pass for standard CRUD modules.</p>
-            </div>
-          </div>
-        
-            </div>
-        <div class="comp-clue"><strong>Clue:</strong> At Unacceptable, they bypass agents entirely. At Capable, they use agents as a starting point but do heavy lifting after. At Adoptive, they’ve optimized the human-agent loop — less rework, better prompts. At Transformative, their agent workflow is what others copy.</div>
-      </div>
-
-      <!-- 2.2 Delivery & Shipping -->
-      <div class="competency-card">
-        <div class="competency-header">
-          <div class="comp-number">2.2</div>
-          <div class="comp-name-block">
-            <div class="comp-name">Delivery &amp; Shipping</div>
-            <div class="comp-question">Can you get things to production — on time, without hand-holding?</div>
-          </div>
-          <span class="comp-badge badge-build">Build</span>
-        </div>
-        <div class="tiers-grid">
-          <div class="tier-block">
-            <div class="tier-block-label unacceptable">Unacceptable</div>
-            <div class="tier-body">
-              <p>Misses deadlines regularly. Needs constant check-ins to stay on track. Builds but doesn't ship.</p>
-              <p>Waits for detailed specs or tickets before starting. Can't operate with ambiguity.</p>
-            
-              <p class="tier-quote">I’m still working on it — I wasn’t sure about the requirements so I was waiting for clarification.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label capable">Capable</div>
-            <div class="tier-body">
-              <p>Delivers on time with moderate oversight. Ships features to production. Communicates blockers before they become crises.</p>
-              <p>Can work from a brief or PRD. Asks clarifying questions when genuinely needed.</p>
-            
-              <p class="tier-quote">Feature’s deployed. I had a blocker on the API schema but flagged it Tuesday and we sorted it out.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label adoptive">Adoptive <span class="chip-inline chip-target-inline">Target</span><span class="chip-inline chip-fd-inline">FD Gate</span></div>
-            <div class="tier-body">
-              <p>Ships independently and consistently. Manages their own timeline. Proactively flags risks early. Delivers beyond the immediate ask when it makes sense.</p>
-              <p>Operates effectively with ambiguity. Takes a vague requirement and turns it into a shipped feature with minimal back-and-forth.</p>
-            
-              <p class="tier-quote">The brief was pretty open-ended so I built what made sense based on the client’s use case — shipped it yesterday, here’s the demo.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label transformative">Transformative</div>
-            <div class="tier-body">
-              <p>Sets the pace for the team. Their projects are the ones others reference for "this is how you ship." Finds ways to ship faster without cutting quality. Delivery velocity improves around them.</p>
-              <p>Thrives in ambiguity. Can take a client conversation and independently translate it into a shippable product within the cycle.</p>
-            
-              <p class="tier-quote">Client mentioned they needed a reporting dashboard during the call. I had a working version deployed by end of day — they’re testing it now.</p>
-            </div>
-          </div>
-        
-            </div>
-        <div class="comp-clue"><strong>Clue:</strong> At Unacceptable, you’re always checking on them. At Capable, they deliver when managed. At Adoptive, they manage themselves. At Transformative, they set the tempo for everyone else.</div>
-      </div>
-
-      <!-- 2.3 Technical Judgment -->
-      <div class="competency-card">
-        <div class="competency-header">
-          <div class="comp-number">2.3</div>
-          <div class="comp-name-block">
-            <div class="comp-name">Technical Judgment</div>
-            <div class="comp-question">Can you make the right call on architecture, approach, and tradeoffs?</div>
-          </div>
-          <span class="comp-badge badge-build">Build</span>
-        </div>
-        <div class="tiers-grid">
-          <div class="tier-block">
-            <div class="tier-block-label unacceptable">Unacceptable</div>
-            <div class="tier-body">
-              <p>Makes technical decisions without considering tradeoffs. Over-engineers or under-engineers consistently. Chooses tools based on familiarity, not fit.</p>
-              <p>Doesn't consider scalability, maintainability, or the next builder who inherits this code.</p>
-            
-              <p class="tier-quote">I used [framework] because that’s what I know. It should work fine.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label capable">Capable</div>
-            <div class="tier-body">
-              <p>Makes sound technical decisions for standard scenarios. Understands tradeoffs between speed, quality, and maintainability. Knows when to ask for input.</p>
-              <p>Builds with awareness that others will maintain it. Code is readable and reasonably structured.</p>
-            
-              <p class="tier-quote">I went with a simpler approach here — it’s not the most elegant but it’s readable and we can extend it later if needed.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label adoptive">Adoptive <span class="chip-inline chip-target-inline">Target</span></div>
-            <div class="tier-body">
-              <p>Consistently makes strong architectural calls. Balances "ship now" with "maintain later." Understands how technical choices affect customization tiers (Fixed/Flexi/Fluid).</p>
-              <p>Builds with the flywheel in mind. Structures code so customizations are modular and reusable.</p>
-            
-              <p class="tier-quote">I structured the pricing module as a separate service so when we need to customize it for the next client, it’s a config change instead of a rebuild.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label transformative">Transformative</div>
-            <div class="tier-body">
-              <p>Makes technical decisions that shape the product portfolio. Their architecture choices become patterns for other projects. Can evaluate and recommend technical direction at the current level.</p>
-              <p>Designs systems that get better with each customization. Technical debt decreases over time on their projects.</p>
-            
-              <p class="tier-quote">I redesigned how we handle multi-tenancy across the portfolio. Every new client now gets a clean instance in minutes instead of days of setup.</p>
-            </div>
-          </div>
-        
-            </div>
-        <div class="comp-clue"><strong>Clue:</strong> At Unacceptable, their decisions create problems for the next person. At Capable, their decisions are safe and reasonable. At Adoptive, their decisions actively make future work easier. At Transformative, their decisions shape how the whole team builds.</div>
-      </div>
-
-      <!-- 2.4 Documentation & Context -->
-      <div class="competency-card">
-        <div class="competency-header">
-          <div class="comp-number">2.4</div>
-          <div class="comp-name-block">
-            <div class="comp-name">Documentation &amp; Context</div>
-            <div class="comp-question">If you disappeared tomorrow, could someone pick up your project by lunch?</div>
-          </div>
-          <span class="comp-badge badge-build">Build</span>
-        </div>
-        <div class="tiers-grid">
-          <div class="tier-block">
-            <div class="tier-block-label unacceptable">Unacceptable</div>
-            <div class="tier-body">
-              <p>No documentation. Aria context threads are empty or outdated. Only they understand how their project works.</p>
-              <p>Treats documentation as a chore to be done "later" (never).</p>
-            
-              <p class="tier-quote">It’s all in my head — I’ll document it when things settle down.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label capable">Capable</div>
-            <div class="tier-body">
-              <p>Aria context threads exist and are reasonably current. Another PE could pick up the project within a day with some ramp-up.</p>
-              <p>Documents when reminded or when it's part of the delivery checklist.</p>
-            
-              <p class="tier-quote">Context thread is up to date as of last week. I’ll add the latest changes before EOD.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label adoptive">Adoptive <span class="chip-inline chip-target-inline">Target</span></div>
-            <div class="tier-body">
-              <p>Aria context is always current — updated same-day, every day. Another PE could pick up the project within half a day. Includes not just what was built but why and what's next.</p>
-              <p>Documents as a natural part of their workflow. It's not extra work — it's how they work.</p>
-            
-              <p class="tier-quote">I update the Aria thread every time I ship something — it takes two minutes and saves hours if someone needs to jump in.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label transformative">Transformative</div>
-            <div class="tier-body">
-              <p>Sets the documentation standard for Build. Their context threads are referenced as examples. Creates templates or patterns that make documentation easier for everyone.</p>
-              <p>Documentation is a force multiplier. Their projects are the easiest to hand off, debug, and extend.</p>
-            
-              <p class="tier-quote">I built a context thread template that auto-captures deployment history, decision log, and open items. Three other PEs are using it now.</p>
-            </div>
-          </div>
-        
-            </div>
-        <div class="comp-clue"><strong>Clue:</strong> At Unacceptable, if they’re out sick, the project stalls. At Capable, someone can pick it up with effort. At Adoptive, handoff is smooth and fast. At Transformative, their documentation approach becomes the team’s approach.</div>
-      </div>
-
-      <!-- 2.5 Product Thinking -->
-      <div class="competency-card">
-        <div class="competency-header">
-          <div class="comp-number">2.5</div>
-          <div class="comp-name-block">
-            <div class="comp-name">Product Thinking</div>
-            <div class="comp-question">Do you understand why you're building what you're building?</div>
-          </div>
-          <span class="comp-badge badge-build">Build</span>
-        </div>
-        <div class="tiers-grid">
-          <div class="tier-block">
-            <div class="tier-block-label unacceptable">Unacceptable</div>
-            <div class="tier-body">
-              <p>Builds exactly what's specified without questioning whether it solves the actual problem. No curiosity about the user or client's business.</p>
-              <p>Treats their role as "receive ticket, write code, submit."</p>
-            
-              <p class="tier-quote">The spec says add a dropdown, so I added a dropdown.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label capable">Capable</div>
-            <div class="tier-body">
-              <p>Understands the user problem their feature addresses. Can explain the business value of what they're building. Asks "why" when something doesn't make sense.</p>
-              <p>Connects their work to the product's goals. Understands the client's business context at a basic level.</p>
-            
-              <p class="tier-quote">This feature helps their warehouse team track shipments faster — makes sense given how much time they spend on manual lookups.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label adoptive">Adoptive <span class="chip-inline chip-target-inline">Target</span></div>
-            <div class="tier-body">
-              <p>Proposes solutions, not just implementations. Catches gaps in requirements and suggests improvements. Thinks about the user experience, not just the technical spec.</p>
-              <p>Thinks like a product owner for their module. Anticipates what the client will need next.</p>
-            
-              <p class="tier-quote">The spec asked for a basic filter, but I noticed their team handles 200+ SKUs — I added a saved filters feature because they’ll definitely need it.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label transformative">Transformative</div>
-            <div class="tier-body">
-              <p>Shapes product direction through technical insight. Identifies opportunities the client hasn't thought of. Their technical perspective directly influences what gets built and why.</p>
-              <p>Client sees them as a product partner, not just an engineer.</p>
-            
-              <p class="tier-quote">I showed the client how we could connect their inventory data to their marketing dashboard — they didn’t ask for it, but it unlocked a whole new use case for them. Growth is now scoping the upsell.</p>
-            </div>
-          </div>
-        
-            </div>
-        <div class="comp-clue"><strong>Clue:</strong> At Unacceptable, they build what’s written. At Capable, they understand what’s written. At Adoptive, they improve what’s written. At Transformative, they rewrite what should be written.</div>
-      </div>
-
-      <!-- 2.6 Client Communication -->
-      <div class="competency-card">
-        <div class="competency-header">
-          <div class="comp-number">2.6</div>
-          <div class="comp-name-block">
-            <div class="comp-name">Client Communication</div>
-            <div class="comp-question">Can you demo, explain, and handle feedback face-to-face?</div>
-          </div>
-          <span class="comp-badge badge-build">Build</span>
-          <span class="comp-badge badge-fd">🚀 FD: Adoptive min.</span>
-        </div>
-        <div class="tiers-grid">
-          <div class="tier-block">
-            <div class="tier-block-label unacceptable">Unacceptable</div>
-            <div class="tier-body">
-              <p>Can't explain their work to non-technical people. Avoids client interaction. Gets defensive or flustered when receiving feedback.</p>
-              <p>Hides behind Slack/channels. Never joins client calls.</p>
-            
-              <p class="tier-quote">Can someone else handle the demo? I’m better at just building.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label capable">Capable</div>
-            <div class="tier-body">
-              <p>Can explain what they built in plain language. Handles client feedback calmly. Communicates status and blockers clearly through async channels.</p>
-              <p>Joins client calls when asked. Contributes when prompted.</p>
-            
-              <p class="tier-quote">I sent the client an update on Slack with screenshots — they had a few questions and I answered them.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label adoptive">Adoptive <span class="chip-inline chip-fd-inline">FD Gate</span></div>
-            <div class="tier-body">
-              <p>Demos confidently — live, in person or on call. Handles real-time client feedback and translates it into action on the spot. Builds trust through clear, reliable communication.</p>
-              <p>Proactively communicates with clients. Doesn't wait to be pulled into conversations.</p>
-            
-              <p class="tier-quote">I demo’ed the new module to the client today. They wanted a tweak to the flow — I told them I’d have it by tomorrow and walked them through why the current approach was designed this way.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label transformative">Transformative</div>
-            <div class="tier-body">
-              <p>Clients request them by name. Builds deep client relationships. Can run a client meeting independently. Represents Symph's values and quality in every interaction.</p>
-              <p>Becomes the client's trusted engineering partner. Elevates the client relationship beyond transactional.</p>
-            
-              <p class="tier-quote">The client called me directly to brainstorm their Q3 roadmap. They trust our input on what’s technically feasible and what’ll move the needle for their business.</p>
-            </div>
-          </div>
-        
-            </div>
-        <div class="comp-clue"><strong>Clue:</strong> At Unacceptable, the client doesn’t know they exist. At Capable, the client knows who they are. At Adoptive, the client trusts them. At Transformative, the client won’t let them go.</div>
-      </div>
-
-      <!-- 2.7 Customization Flywheel -->
-      <div class="competency-card">
-        <div class="competency-header">
-          <div class="comp-number">2.7</div>
-          <div class="comp-name-block">
-            <div class="comp-name">Customization Flywheel</div>
-            <div class="comp-question">Do you think in patterns, or just ship one-offs?</div>
-          </div>
-          <span class="comp-badge badge-build">Build</span>
-        </div>
-        <div class="tiers-grid">
-          <div class="tier-block">
-            <div class="tier-block-label unacceptable">Unacceptable</div>
-            <div class="tier-body">
-              <p>Every feature is built from scratch. No reuse, no patterns, no thought about how this could apply elsewhere.</p>
-              <p>Doesn't understand Fixed/Flexi/Fluid or how they relate to each other.</p>
-            
-              <p class="tier-quote">I just built it the way that worked for this client. I didn’t think about whether anyone else would need it.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label capable">Capable</div>
-            <div class="tier-body">
-              <p>Recognizes when they've built something similar before. Reuses code and patterns from previous projects when applicable.</p>
-              <p>Understands the tier model and can explain where their project sits.</p>
-            
-              <p class="tier-quote">This is similar to what I built for the other client — I pulled some of that logic over.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label adoptive">Adoptive <span class="chip-inline chip-target-inline">Target</span></div>
-            <div class="tier-body">
-              <p>Actively designs for reusability. Builds features as modules that can become Flexi toggles. Identifies which Fluid customizations should be templatized.</p>
-              <p>Uses the tier model to inform technical decisions. Builds Fluid work with an eye on "how does this become Flexi?"</p>
-            
-              <p class="tier-quote">I built this notification system as a configurable module — next client that needs notifications, it’s a settings change, not a rebuild.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label transformative">Transformative</div>
-            <div class="tier-body">
-              <p>Drives the flywheel. Their Fluid deliveries systematically become Flexi features, then Fixed defaults. Creates the patterns that make The Agency's customization engine faster with every project.</p>
-              <p>The product portfolio is measurably richer because of their pattern contributions. Agent autonomy increases on their project types.</p>
-            
-              <p class="tier-quote">Three of the modules I built as Fluid for our first client are now Flexi defaults in the platform. Aria can scaffold a new instance with those features in under an hour.</p>
-            </div>
-          </div>
-        
-            </div>
-        <div class="comp-clue"><strong>Clue:</strong> At Unacceptable, every project starts from zero. At Capable, they reuse when it’s obvious. At Adoptive, they design for reuse from the start. At Transformative, the platform gets faster because of them.</div>
-      </div>
-
-      <!-- 2.8 Solutions Architecture -->
-      <div class="competency-card">
-        <div class="competency-header">
-          <div class="comp-number">2.8</div>
-          <div class="comp-name-block">
-            <div class="comp-name">Solutions Architecture</div>
-            <div class="comp-question">Can you think beyond the current project to the client's ecosystem?</div>
-          </div>
-          <span class="comp-badge badge-build">Build</span>
-        </div>
-        <div class="tiers-grid">
-          <div class="tier-block">
-            <div class="tier-block-label unacceptable">Unacceptable</div>
-            <div class="tier-body">
-              <p>Only sees the project in front of them. No awareness of the client's broader needs or how products connect.</p>
-              <p>Builds isolated features that can't talk to anything else.</p>
-            
-              <p class="tier-quote">I just focused on the module I was assigned. I don’t know what the other teams are building.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label capable">Capable</div>
-            <div class="tier-body">
-              <p>Understands their project in the context of the client's business. Aware that other products exist or may be needed.</p>
-              <p>Builds with clean APIs/interfaces that could connect to other systems.</p>
-            
-              <p class="tier-quote">I made sure the API is RESTful and documented — if they need another system to pull from it later, it’s ready.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label adoptive">Adoptive <span class="chip-inline chip-target-inline">Target</span></div>
-            <div class="tier-body">
-              <p>Thinks in systems. Designs their product with integration points for future products. Identifies what the client will need next and flags it to the team.</p>
-              <p>Proactively designs for cross-product integration. When building VFC:QC, already thinking about how TMS will connect.</p>
-            
-              <p class="tier-quote">I designed the data layer so the truck management system can read from the same source — saves us a migration later when that project kicks off.</p>
-            </div>
-          </div>
-          <div class="tier-block">
-            <div class="tier-block-label transformative">Transformative</div>
-            <div class="tier-body">
-              <p>Architects the client's product ecosystem. Designs systems that anticipate 2–3 products ahead. Their architecture decisions make future builds faster and cheaper. Directly influences client expansion opportunities.</p>
-              <p>Becomes the go-to person for "how should this client's products fit together?" Growth consults them on what to pitch next.</p>
-            </div>
-          </div>
-        </div>
-        <div class="comp-clue"><strong>Clue:</strong> At Unacceptable, their project is an island. At Capable, bridges exist but aren’t planned. At Adoptive, bridges are designed in from day one. At Transformative, they’re designing the whole city.</div>
-      
-            </div>
-
+  <!-- ── 1. BUILD LENS ── -->
+  <section class="sk-section">
+    <div class="section-label"><span class="sk-section-num">01</span> Build Lens</div>
+    <div class="sk-body">
+      <p>Build exists to:</p>
+      <ul>
+        <li>ship real product increments fast</li>
+        <li>make builds customization-ready from day one</li>
+        <li>deliver Flexi and Fluid work safely</li>
+        <li>turn one-off work into repeatable leverage</li>
+      </ul>
+      <p>That means Build should prioritize Aria skills that improve:</p>
+      <ul>
+        <li><strong>Squad Delivery</strong></li>
+        <li><strong>Fluid Delivery</strong></li>
+        <li><strong>Agent Nudging</strong></li>
+        <li><strong>Technical Judgment</strong></li>
+      </ul>
+      <p>The goal is not to know every skill equally.<br>The goal is to know <strong>which skills to reach for first</strong>.</p>
     </div>
   </section>
 
-  <hr class="divider">
-
-  <!-- ── FORWARD DEPLOY READINESS ── -->
-  <section class="section">
-    <div class="section-label">Forward Deploy Readiness</div>
-    <div style="font-size:13px; color:var(--text-muted); margin-bottom:20px; line-height:1.7;">
-      Moving from Applications to Forward Deploy isn't a promotion — it's a deployment decision. Either path requires deliberation with the Lead AI Product Engineer before deployment. The rubric informs the decision; it does not make the decision.
+  <!-- ── 2. PRIORITY MODEL ── -->
+  <section class="sk-section">
+    <div class="section-label"><span class="sk-section-num">02</span> Priority Model</div>
+    <div class="sk-tier-card tier-1">
+      <span class="sk-tier-badge t1">Tier 1</span>
+      <div class="sk-tier-title">Build-Critical</div>
+      <div class="sk-tier-desc">Use constantly. These directly affect shipping, QA, production safety, or recoverability.</div>
     </div>
+    <div class="sk-tier-card tier-2">
+      <span class="sk-tier-badge t2">Tier 2</span>
+      <div class="sk-tier-title">Build-Adjacent</div>
+      <div class="sk-tier-desc">Use often. These improve leverage, polish, coordination, and handoff quality.</div>
+    </div>
+    <div class="sk-tier-card tier-3">
+      <span class="sk-tier-badge t3">Tier 3</span>
+      <div class="sk-tier-title">General Utility</div>
+      <div class="sk-tier-desc">Useful, but not central to Build's day-to-day job.</div>
+    </div>
+    <div class="sk-tier-card tier-4">
+      <span class="sk-tier-badge t4">Tier 4</span>
+      <div class="sk-tier-title">Cross-Current / Use With Care</div>
+      <div class="sk-tier-desc">Useful in context, but should not blur ownership with Taste, Growth, or Agents.</div>
+    </div>
+  </section>
 
-    <div class="paths-grid">
-      <!-- Path A -->
-      <div class="path-card">
-        <div class="path-label">Path A</div>
-        <div class="path-name">Rubric-Based Qualification</div>
-        <div class="gate-group">
-          <div class="gate-group-label">Hard Gates — must meet, no exceptions</div>
-          <div class="gate-row">
-            <span class="gate-name">Client Communication</span>
-            <span class="gate-min gate-hard">Adoptive</span>
-          </div>
-          <div class="gate-row">
-            <span class="gate-name">Delivery &amp; Shipping</span>
-            <span class="gate-min gate-hard">Adoptive</span>
-          </div>
-          <div class="gate-row">
-            <span class="gate-name">Aria &amp; Agent Workflow</span>
-            <span class="gate-min gate-hard">Capable</span>
-          </div>
-        </div>
-        <div class="gate-group">
-          <div class="gate-group-label">Soft Gates — target state, exceptions allowed</div>
-          <div class="gate-row"><span class="gate-name">Knowledge Sharing</span><span class="gate-min gate-soft">Capable</span></div>
-          <div class="gate-row"><span class="gate-name">Cross-Current Collaboration</span><span class="gate-min gate-soft">Capable</span></div>
-          <div class="gate-row"><span class="gate-name">Technical Judgment</span><span class="gate-min gate-soft">Capable</span></div>
-          <div class="gate-row"><span class="gate-name">Documentation &amp; Context</span><span class="gate-min gate-soft">Adoptive</span></div>
-          <div class="gate-row"><span class="gate-name">Product Thinking</span><span class="gate-min gate-soft">Capable</span></div>
-          <div class="gate-row"><span class="gate-name">Customization Flywheel</span><span class="gate-min gate-soft">Capable</span></div>
-          <div class="gate-row"><span class="gate-name">Solutions Architecture</span><span class="gate-min gate-soft">Capable</span></div>
-        </div>
-        <div class="path-note">A PE who meets all Hard Gates but falls short on one or more Soft Gates can still be deployed forward. The expectation is they develop those areas in the engagement.</div>
-      </div>
+  <!-- ── 3. TIER 1 — BUILD-CRITICAL SKILLS ── -->
+  <section class="sk-section">
+    <div class="section-label"><span class="sk-section-num">03</span> Tier 1 — Build-Critical Skills</div>
 
-      <!-- Path B -->
-      <div class="path-card">
-        <div class="path-label">Path B</div>
-        <div class="path-name">Demonstrated Performance (Fast Track)</div>
-        <div style="font-size:12px; color:var(--text-muted); margin-bottom:14px; line-height:1.6;">Real-world proof overrides the rubric. If a PE has already done the work and a client has seen the output, they've demonstrated Forward Deploy capability regardless of rubric tier.</div>
-        <ul class="path-b-list">
-          <li>Built and shipped at least one end-to-end product or PoC using Aria</li>
-          <li>That product has been demo'ed to a client (by them or by someone else — the product itself passed the bar)</li>
+    <div class="sk-group" style="border-left: 4px solid var(--amber);">
+      <div class="sk-sub-id">3.1</div>
+      <div class="sk-group-title">Build Execution and Coding</div>
+      <p class="sk-body" style="margin-bottom: 12px;">These are the primary build engine skills.</p>
+      <ul class="sk-skill-list">
+          <li><code>coding-agent</code> <span class="sk-skill-desc">Primary coding workflow for implementation</span></li>
+          <li><code>build-planning</code> <span class="sk-skill-desc">Step-by-step implementation planning before coding</span></li>
+          <li><code>scaffold</code> <span class="sk-skill-desc">Project scaffolding for common frameworks</span></li>
+          <li><code>web-stack</code> <span class="sk-skill-desc">Default web stack: Next.js + Tailwind + shadcn + Firebase</span></li>
+          <li><code>react-patterns</code> <span class="sk-skill-desc">Modern React and Next.js implementation patterns</span></li>
+          <li><code>api-design</code> <span class="sk-skill-desc">REST and GraphQL API design conventions</span></li>
+          <li><code>react-native-init</code> <span class="sk-skill-desc">Initialize React Native apps safely</span></li>
+          <li><code>react-native-add-package</code> <span class="sk-skill-desc">Add React Native packages safely</span></li>
+          <li><code>react-native-devserver</code> <span class="sk-skill-desc">Diagnose Metro/devserver workflow for React Native</span></li>
+          <li><code>nextjs-devserver-neo</code> <span class="sk-skill-desc">Diagnose and fix Next.js apps on devserver-neo</span></li>
         </ul>
-        <div style="margin-top:20px; padding:14px 16px; background:var(--amber-glow); border:1px solid var(--border-amber); border-radius:8px; font-size:12px; color:var(--text-muted);">
-          <strong style="color:var(--amber);">Note on the checklist:</strong> This criteria isn't about gatekeeping — it's about ensuring we're setting people up for success when they walk into a client's office. If someone is clearly ready, they're ready. The checklist is a guide, not a gate.
+      <div class="sk-use-for">Use for:</div>
+        <ul class="sk-use-list">
+          <li>implementation planning before coding</li>
+          <li>scaffolding new products or modules</li>
+          <li>staying aligned to the default Agency stack</li>
+          <li>solving React / Next.js / React Native delivery issues</li>
+          <li>shaping maintainable API surfaces</li>
+        </ul>
+    </div>
+
+    <div class="sk-group" style="border-left: 4px solid var(--amber);">
+      <div class="sk-sub-id">3.2</div>
+      <div class="sk-group-title">QA, Review, and Verification</div>
+      <p class="sk-body" style="margin-bottom: 12px;">These protect Build from shipping broken work.</p>
+      <ul class="sk-skill-list">
+          <li><code>tdd</code> <span class="sk-skill-desc">Test-driven development enforcement</span></li>
+          <li><code>testing</code> <span class="sk-skill-desc">Comprehensive test generation</span></li>
+          <li><code>e2e-testing</code> <span class="sk-skill-desc">Playwright end-to-end browser tests</span></li>
+          <li><code>pre-commit-review</code> <span class="sk-skill-desc">Code review gate before any git commit</span></li>
+          <li><code>code-review</code> <span class="sk-skill-desc">Comprehensive code review checklist</span></li>
+          <li><code>verification</code> <span class="sk-skill-desc">Completion verification gate</span></li>
+          <li><code>frontend-quality</code> <span class="sk-skill-desc">Frontend quality gate for responsiveness and performance</span></li>
+          <li><code>responsive-qa</code> <span class="sk-skill-desc">Pre-launch responsive QA gate</span></li>
+          <li><code>mobile-audit</code> <span class="sk-skill-desc">Mobile responsiveness audit and fixes</span></li>
+          <li><code>systematic-debugging</code> <span class="sk-skill-desc">Four-phase root cause debugging</span></li>
+          <li><code>simplify</code> <span class="sk-skill-desc">Code quality review and cleanup</span></li>
+        </ul>
+      <div class="sk-use-for">Use for:</div>
+        <ul class="sk-use-list">
+          <li>validating features before demo or deploy</li>
+          <li>catching regressions and edge cases</li>
+          <li>frontend quality gating</li>
+          <li>responsive/mobile checks</li>
+          <li>debugging recurring or unclear failures</li>
+          <li>tightening code quality before handoff</li>
+        </ul>
+    </div>
+
+    <div class="sk-group" style="border-left: 4px solid var(--amber);">
+      <div class="sk-sub-id">3.3</div>
+      <div class="sk-group-title">Product Context and Recoverability</div>
+      <p class="sk-body" style="margin-bottom: 12px;">These are essential to handoff, scope clarity, and continuity.</p>
+      <ul class="sk-skill-list">
+          <li><code>product-spec</code> <span class="sk-skill-desc">Single-file HTML product spec dashboard</span></li>
+          <li><code>update-product-spec</code> <span class="sk-skill-desc">Surgically update product spec dashboards</span></li>
+          <li><code>project-context</code> <span class="sk-skill-desc">Generate and maintain CLAUDE.md at project root</span></li>
+          <li><code>knowledge-transfer</code> <span class="sk-skill-desc">KT document generator for project handoffs</span></li>
+          <li><code>design-handoff</code> <span class="sk-skill-desc">Design-to-build handoff document generator</span></li>
+          <li><code>table-standard</code> <span class="sk-skill-desc">UX standard for data table components</span></li>
+        </ul>
+      <div class="sk-use-for">Use for:</div>
+        <ul class="sk-use-list">
+          <li>clarifying what is actually being built</li>
+          <li>keeping specs aligned to delivery reality</li>
+          <li>maintaining durable project context</li>
+          <li>making handoffs possible in under half a day</li>
+          <li>standardizing recurring UI patterns like tables</li>
+        </ul>
+    </div>
+
+    <div class="sk-group" style="border-left: 4px solid var(--amber);">
+      <div class="sk-sub-id">3.4</div>
+      <div class="sk-group-title">Deployment, Infrastructure, and Production Safety</div>
+      <p class="sk-body" style="margin-bottom: 12px;">These close the gap between "works in dev" and "safe in prod."</p>
+      <ul class="sk-skill-list">
+          <li><code>deployment</code> <span class="sk-skill-desc">CI/CD and Cloud Run deployment patterns</span></li>
+          <li><code>prod-deploy</code> <span class="sk-skill-desc">Standardized Cloud Run production deployments</span></li>
+          <li><code>prod-lb-setup</code> <span class="sk-skill-desc">GCP HTTPS Load Balancer, SSL cert, and Cloud Armor WAF setup</span></li>
+          <li><code>firebase-setup</code> <span class="sk-skill-desc">Firebase infrastructure provisioning</span></li>
+          <li><code>supabase-setup</code> <span class="sk-skill-desc">Supabase infrastructure provisioning</span></li>
+          <li><code>gcp-iam</code> <span class="sk-skill-desc">GCP IAM role binding management</span></li>
+          <li><code>gcp-oauth-setup</code> <span class="sk-skill-desc">Google OAuth 2.0 setup for Cloud Run</span></li>
+          <li><code>dns-management</code> <span class="sk-skill-desc">DNS record management for *.symph.co</span></li>
+          <li><code>security-defaults</code> <span class="sk-skill-desc">Mandatory security standards for builds</span></li>
+          <li><code>update-config</code> <span class="sk-skill-desc">Configure Claude Code harness settings</span></li>
+          <li><code>git-tracker</code> <span class="sk-skill-desc">Ensure all product directories are git-tracked</span></li>
+        </ul>
+      <div class="sk-use-for">Use for:</div>
+        <ul class="sk-use-list">
+          <li>deployment patterns and CI/CD</li>
+          <li>production releases</li>
+          <li>HTTPS load balancer and domain setup</li>
+          <li>auth and infra provisioning</li>
+          <li>IAM and environment safety</li>
+          <li>rollout hygiene and config consistency</li>
+        </ul>
+      <div class="sk-special-note">
+        <strong>Special note: <code style="background:transparent;border:none;padding:0;font-size:12px;">prod-lb-setup</code></strong><br>
+        This is Build-critical. It covers production HTTPS setup for Cloud Run using GCP HTTPS Load Balancer, Google-managed SSL, and Cloud Armor WAF. That makes it part of real delivery, not just infra trivia.
+      </div>
+    </div>
+
+    <div class="sk-group" style="border-left: 4px solid var(--amber);">
+      <div class="sk-sub-id">3.5</div>
+      <div class="sk-group-title">Instrumentation and Product-Ready Defaults</div>
+      <p class="sk-body" style="margin-bottom: 12px;">These matter because live products need more than code.</p>
+      <ul class="sk-skill-list">
+          <li><code>posthog</code> <span class="sk-skill-desc">PostHog analytics integration</span></li>
+          <li><code>gtm-implementation</code> <span class="sk-skill-desc">Google Tag Manager integration</span></li>
+          <li><code>seo-setup</code> <span class="sk-skill-desc">SEO fundamentals: meta, OG, sitemap, Search Console</span></li>
+          <li><code>localized-pricing</code> <span class="sk-skill-desc">Geo-IP internationalized pricing for Next.js</span></li>
+        </ul>
+      <div class="sk-use-for">Use for:</div>
+        <ul class="sk-use-list">
+          <li>analytics instrumentation</li>
+          <li>GTM implementation and preservation</li>
+          <li>basic SEO readiness</li>
+          <li>geo-aware pricing support when required</li>
+        </ul>
+      <div class="sk-body" style="margin-top: 10px; font-style: italic; color: var(--text-dim);">
+        A product that ships without analytics, tracking, or discoverability is only half shipped.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. TIER 2 — BUILD-ADJACENT SKILLS ── -->
+  <section class="sk-section">
+    <div class="section-label"><span class="sk-section-num">04</span> Tier 2 — Build-Adjacent Skills</div>
+    <div class="sk-body" style="margin-bottom: 20px;">
+      <p>These increase leverage, clarity, and ship quality, but are not the core build loop.</p>
+    </div>
+
+    <div class="sk-group" style="border-left: 4px solid var(--blue);">
+      <div class="sk-sub-id">4.1</div>
+      <div class="sk-group-title">Design Support Skills</div>
+      <ul class="sk-skill-list">
+          <li><code>design-system</code> <span class="sk-skill-desc">Color palette, logo, typography, and design token system</span></li>
+          <li><code>design-assets</code> <span class="sk-skill-desc">AI image prompt styles, landing page methodology, social specs</span></li>
+          <li><code>design-taste</code> <span class="sk-skill-desc">Quality standards and anti-slop checklist</span></li>
+          <li><code>screen-generator</code> <span class="sk-skill-desc">HTML screen mockups for web and mobile</span></li>
+          <li><code>frontend-design</code> <span class="sk-skill-desc">Production-grade UI with high design quality</span></li>
+          <li><code>moodboard</code> <span class="sk-skill-desc">Visual moodboards for products and brands</span></li>
+          <li><code>discord-moodboard</code> <span class="sk-skill-desc">Discord-native moodboard creation</span></li>
+          <li><code>logo-generator</code> <span class="sk-skill-desc">AI logo concept generation</span></li>
+          <li><code>product-visual-languages</code> <span class="sk-skill-desc">Per-product visual language definitions</span></li>
+          <li><code>visual-consistency</code> <span class="sk-skill-desc">Unified visual system across campaign assets</span></li>
+          <li><code>social-media-templates</code> <span class="sk-skill-desc">Social media template sets</span></li>
+          <li><code>slide-design</code> <span class="sk-skill-desc">HTML/CSS slide decks and presentations</span></li>
+          <li><code>trend-research</code> <span class="sk-skill-desc">Design, branding, and marketing trend research</span></li>
+          <li><code>figma</code> <span class="sk-skill-desc">Read-only Figma design analysis and asset export</span></li>
+        </ul>
+      <div class="sk-use-for">Use for:</div>
+        <ul class="sk-use-list">
+          <li>getting design intent into buildable form</li>
+          <li>improving frontend quality and consistency</li>
+          <li>supporting design-heavy product work</li>
+          <li>aligning implementation to actual design direction</li>
+        </ul>
+      <div class="sk-boundary-note">
+        <strong>Important boundary:</strong> Build can use these heavily, but <strong>Taste still owns final quality judgment</strong>.
+      </div>
+    </div>
+
+    <div class="sk-group" style="border-left: 4px solid var(--blue);">
+      <div class="sk-sub-id">4.2</div>
+      <div class="sk-group-title">Delivery Support and Artifact Skills</div>
+      <ul class="sk-skill-list">
+          <li><code>html-artifact</code> <span class="sk-skill-desc">HTML artifact generation for the Agency portal</span></li>
+          <li><code>html-to-pdf</code> <span class="sk-skill-desc">HTML to pixel-perfect PDF conversion</span></li>
+          <li><code>excel</code> <span class="sk-skill-desc">Read, write, and format Excel files</span></li>
+          <li><code>data-analysis</code> <span class="sk-skill-desc">Data processing and visualization patterns</span></li>
+          <li><code>init-product-graph</code> <span class="sk-skill-desc">Initialize a reactive artifact dependency graph for a product</span></li>
+          <li><code>reconcile-stale</code> <span class="sk-skill-desc">Analyze and resolve stale artifacts in the pipeline</span></li>
+        </ul>
+      <div class="sk-use-for">Use for:</div>
+        <ul class="sk-use-list">
+          <li>producing artifacts for Agency workflows</li>
+          <li>converting outputs into deliverable formats</li>
+          <li>analyzing data during implementation or QA</li>
+          <li>improving product artifact hygiene</li>
+        </ul>
+    </div>
+
+    <div class="sk-group" style="border-left: 4px solid var(--blue);">
+      <div class="sk-sub-id">4.3</div>
+      <div class="sk-group-title">Reuse and Systemization Skills</div>
+      <ul class="sk-skill-list">
+          <li><code>skill-creator</code> <span class="sk-skill-desc">Canonical skill creation and validation</span></li>
+          <li><code>skill-announcement</code> <span class="sk-skill-desc">Discord announcement assets for new skills</span></li>
+          <li><code>self-improve</code> <span class="sk-skill-desc">Post-task memory and skill reflection</span></li>
+          <li><code>clawhub</code> <span class="sk-skill-desc">Search and review community skills</span></li>
+          <li><code>legacy-migration</code> <span class="sk-skill-desc">Legacy Aria product migration</span></li>
+          <li><code>claude-api</code> <span class="sk-skill-desc">Build apps with Anthropic Claude API / Agent SDK</span></li>
+        </ul>
+      <div class="sk-use-for">Use for:</div>
+        <ul class="sk-use-list">
+          <li>turning recurring work into reusable skills</li>
+          <li>improving Aria's operating surface over time</li>
+          <li>migrating older products into cleaner systems</li>
+          <li>building products that use Claude or agent APIs directly</li>
+        </ul>
+    </div>
+  </section>
+
+  <!-- ── 5. TIER 3 — GENERAL UTILITY ── -->
+  <section class="sk-section">
+    <div class="section-label"><span class="sk-section-num">05</span> Tier 3 — General Utility Skills</div>
+    <div class="sk-body" style="margin-bottom: 16px;">
+      <p>These are useful, but not central to Build identity.</p>
+    </div>
+    <div class="sk-group" style="border-left: 4px solid var(--text-dim);">
+      <ul class="sk-skill-list">
+          <li><code>gemini</code> <span class="sk-skill-desc">Image and video generation via Google Gemini</span></li>
+          <li><code>ideogram</code> <span class="sk-skill-desc">Image generation via Ideogram 3.0</span></li>
+          <li><code>video-production</code> <span class="sk-skill-desc">Remotion-based video content creation</span></li>
+          <li><code>humanizer</code> <span class="sk-skill-desc">Remove AI writing patterns from text</span></li>
+          <li><code>prompt-coach</code> <span class="sk-skill-desc">Reflect prompts in structured format</span></li>
+          <li><code>form-mapper</code> <span class="sk-skill-desc">Government PDF form field extraction</span></li>
+          <li><code>noop-test</code> <span class="sk-skill-desc">No-op skill for infrastructure verification</span></li>
+          <li><code>daily-briefer</code> <span class="sk-skill-desc">Symph daily morning brief generator</span></li>
+          <li><code>evening-retro</code> <span class="sk-skill-desc">Nightly retrospective generator</span></li>
+          <li><code>currents-bridge</code> <span class="sk-skill-desc">Post Currents drops for team members</span></li>
+          <li><code>discord-channel-manager</code> <span class="sk-skill-desc">Manage Discord channels and threads</span></li>
+        </ul>
+      <div class="sk-use-for">Use for:</div>
+        <ul class="sk-use-list">
+          <li>specific content or media tasks</li>
+          <li>operational support</li>
+          <li>light workflow support</li>
+          <li>infrastructure verification</li>
+        </ul>
+      <div class="sk-body" style="margin-top: 10px; font-style: italic; color: var(--text-dim);">
+        Helpful when needed. Not the first skills Build should optimize around.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. TIER 4 — CROSS-CURRENT / USE WITH CARE ── -->
+  <section class="sk-section">
+    <div class="section-label"><span class="sk-section-num">06</span> Tier 4 — Cross-Current / Use With Care</div>
+    <div class="sk-body" style="margin-bottom: 20px;">
+      <p>These are valuable, but Build should use them without swallowing another current's job.</p>
+    </div>
+
+    <div class="sk-care-card">
+      <div class="sk-sub-id">6.1</div>
+      <div class="sk-care-title">Agency Pipeline Skills</div>
+      <ul class="sk-skill-list">
+          <li><code>discovery-pipeline</code> <span class="sk-skill-desc">Discovery phase orchestrator</span></li>
+          <li><code>design-pipeline</code> <span class="sk-skill-desc">Design phase orchestrator</span></li>
+          <li><code>build-pipeline</code> <span class="sk-skill-desc">Build phase orchestrator</span></li>
+          <li><code>market-pipeline</code> <span class="sk-skill-desc">Market phase orchestrator</span></li>
+          <li><code>sell-pipeline</code> <span class="sk-skill-desc">Sell phase orchestrator</span></li>
+          <li><code>deliver-pipeline</code> <span class="sk-skill-desc">Deliver phase orchestrator</span></li>
+          <li><code>operate-pipeline</code> <span class="sk-skill-desc">Operate phase orchestrator</span></li>
+        </ul>
+      <div class="sk-care-why">
+        <strong>Why use with care:</strong> Useful for understanding the broader Agency system, but Build does not own the entire Agency pipeline.
+      </div>
+    </div>
+
+    <div class="sk-care-card">
+      <div class="sk-sub-id">6.2</div>
+      <div class="sk-care-title">Growth / Go-to-Market Adjacent Skills</div>
+      <ul class="sk-skill-list">
+          <li><code>landing-page-builder</code> <span class="sk-skill-desc">SEO-optimized marketing landing pages</span></li>
+          <li><code>project-kickoff-portal</code> <span class="sk-skill-desc">Client-facing project kickoff portal website</span></li>
+          <li><code>apollo</code> <span class="sk-skill-desc">Apollo.io REST API for sales intelligence</span></li>
+          <li><code>ad-launch-wizard</code> <span class="sk-skill-desc">Unified paid ads campaign launcher</span></li>
+        </ul>
+      <div class="sk-care-why">
+        <strong>Why use with care:</strong> Build may support these, but Growth owns messaging, demand, and outbound.
+      </div>
+    </div>
+
+    <div class="sk-care-card">
+      <div class="sk-sub-id">6.3</div>
+      <div class="sk-care-title">Finance / Payments / Shared Service Skills</div>
+      <ul class="sk-skill-list">
+          <li><code>symph-pay</code> <span class="sk-skill-desc">Symph Pay payment processing integration</span></li>
+          <li><code>resend</code> <span class="sk-skill-desc">Email delivery via Resend CLI</span></li>
+          <li><code>openai-models</code> <span class="sk-skill-desc">OpenAI model access: GPT-5.4, o3, o4-mini</span></li>
+          <li><code>posthog-admin</code> <span class="sk-skill-desc">PostHog org management</span></li>
+        </ul>
+      <div class="sk-care-why">
+        <strong>Why use with care:</strong> Useful in implementation, but may involve shared systems, cost, admin access, or non-Build ownership.
+      </div>
+    </div>
+
+    <div class="sk-care-card">
+      <div class="sk-sub-id">6.4</div>
+      <div class="sk-care-title">Agent Governance Skills</div>
+      <ul class="sk-skill-list">
+          <li><code>self-modification-review</code> <span class="sk-skill-desc">Mandatory pre-flight for any Aria change</span></li>
+          <li><code>loop</code> <span class="sk-skill-desc">Recurring task and interval polling</span></li>
+          <li><code>update-config</code> <span class="sk-skill-desc">Harness configuration and behavior settings (parts)</span></li>
+        </ul>
+      <div class="sk-care-why">
+        <strong>Why use with care:</strong> These touch Aria behavior, recurring automation, or harness configuration. Build can use them, but should not quietly assume Agents ownership.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 7. BUILD-BY-RESPONSIBILITY MAPPING ── -->
+  <section class="sk-section">
+    <div class="section-label"><span class="sk-section-num">07</span> Build-by-Responsibility Mapping</div>
+
+    <div class="sk-resp-card">
+      <div class="sk-sub-id">7.1</div>
+      <div class="sk-resp-title">Squad Delivery</div>
+      <div class="sk-resp-label">Prioritize:</div>
+      <ul class="sk-skill-list">
+            <li><code>coding-agent</code> <span class="sk-skill-desc">primary coding workflow</span></li>
+            <li><code>build-planning</code> <span class="sk-skill-desc">implementation planning</span></li>
+            <li><code>project-context</code> <span class="sk-skill-desc">maintain project context</span></li>
+            <li><code>testing</code> <span class="sk-skill-desc">comprehensive test generation</span></li>
+            <li><code>e2e-testing</code> <span class="sk-skill-desc">browser flow tests</span></li>
+            <li><code>verification</code> <span class="sk-skill-desc">completion gate</span></li>
+            <li><code>code-review</code> <span class="sk-skill-desc">implementation review</span></li>
+            <li><code>frontend-quality</code> <span class="sk-skill-desc">frontend quality gate</span></li>
+            <li><code>systematic-debugging</code> <span class="sk-skill-desc">root cause debugging</span></li>
+          </ul>
+    </div>
+
+    <div class="sk-resp-card">
+      <div class="sk-sub-id">7.2</div>
+      <div class="sk-resp-title">Fluid Delivery</div>
+      <div class="sk-resp-label">Prioritize:</div>
+      <ul class="sk-skill-list">
+            <li><code>product-spec</code> <span class="sk-skill-desc">product spec dashboard</span></li>
+            <li><code>update-product-spec</code> <span class="sk-skill-desc">spec updates</span></li>
+            <li><code>design-handoff</code> <span class="sk-skill-desc">design-to-build handoff</span></li>
+            <li><code>deployment</code> <span class="sk-skill-desc">deployment patterns</span></li>
+            <li><code>prod-deploy</code> <span class="sk-skill-desc">production deploys</span></li>
+            <li><code>prod-lb-setup</code> <span class="sk-skill-desc">LB + SSL + WAF setup</span></li>
+            <li><code>gcp-iam</code> <span class="sk-skill-desc">IAM configuration</span></li>
+            <li><code>dns-management</code> <span class="sk-skill-desc">domain management</span></li>
+            <li><code>security-defaults</code> <span class="sk-skill-desc">security baseline</span></li>
+          </ul>
+    </div>
+
+    <div class="sk-resp-card">
+      <div class="sk-sub-id">7.3</div>
+      <div class="sk-resp-title">Agent Nudging</div>
+      <div class="sk-resp-label">Prioritize:</div>
+      <ul class="sk-skill-list">
+            <li><code>knowledge-transfer</code> <span class="sk-skill-desc">handoff and KT docs</span></li>
+            <li><code>skill-creator</code> <span class="sk-skill-desc">reusable skill creation</span></li>
+            <li><code>self-improve</code> <span class="sk-skill-desc">post-task reflection</span></li>
+            <li><code>git-tracker</code> <span class="sk-skill-desc">ensure repos are tracked</span></li>
+            <li><code>update-config</code> <span class="sk-skill-desc">harness configuration</span></li>
+            <li><code>reconcile-stale</code> <span class="sk-skill-desc">resolve stale artifacts</span></li>
+          </ul>
+    </div>
+
+    <div class="sk-resp-card">
+      <div class="sk-sub-id">7.4</div>
+      <div class="sk-resp-title">Technical Judgment</div>
+      <div class="sk-resp-label">Prioritize:</div>
+      <ul class="sk-skill-list">
+            <li><code>build-planning</code> <span class="sk-skill-desc">plan before coding</span></li>
+            <li><code>code-review</code> <span class="sk-skill-desc">review implementation quality</span></li>
+            <li><code>verification</code> <span class="sk-skill-desc">confirm completion</span></li>
+            <li><code>systematic-debugging</code> <span class="sk-skill-desc">isolate root cause</span></li>
+            <li><code>simplify</code> <span class="sk-skill-desc">reduce complexity</span></li>
+            <li><code>product-spec</code> <span class="sk-skill-desc">keep intent clear</span></li>
+            <li><code>api-design</code> <span class="sk-skill-desc">design maintainable APIs</span></li>
+          </ul>
+    </div>
+  </section>
+
+  <!-- ── 8. RECOMMENDED BUILD DEFAULTS ── -->
+  <section class="sk-section">
+    <div class="section-label"><span class="sk-section-num">08</span> Recommended Build Defaults</div>
+    <div class="sk-body" style="margin-bottom: 16px;">
+      <p>If a PE is unsure what to reach for first, default to this order:</p>
+    </div>
+    <div class="sk-defaults">
+      <div class="sk-defaults-item"><span class="sk-defaults-num">1.</span> <code>project-context</code> <span style="margin-left: 4px;">— recover project reality</span></div>
+      <div class="sk-defaults-item"><span class="sk-defaults-num">2.</span> <code>product-spec</code> or <code>update-product-spec</code> <span style="margin-left: 4px;">— clarify scope</span></div>
+      <div class="sk-defaults-item"><span class="sk-defaults-num">3.</span> <code>build-planning</code> <span style="margin-left: 4px;">— plan the implementation</span></div>
+      <div class="sk-defaults-item"><span class="sk-defaults-num">4.</span> <code>coding-agent</code> <span style="margin-left: 4px;">— execute the build</span></div>
+      <div class="sk-defaults-item"><span class="sk-defaults-num">5.</span> <code>systematic-debugging</code> <span style="margin-left: 4px;">— isolate failures cleanly</span></div>
+      <div class="sk-defaults-item"><span class="sk-defaults-num">6.</span> <code>testing</code> / <code>e2e-testing</code> <span style="margin-left: 4px;">— validate behavior</span></div>
+      <div class="sk-defaults-item"><span class="sk-defaults-num">7.</span> <code>verification</code> <span style="margin-left: 4px;">— confirm completion</span></div>
+      <div class="sk-defaults-item"><span class="sk-defaults-num">8.</span> <code>code-review</code> / <code>pre-commit-review</code> <span style="margin-left: 4px;">— tighten before ship</span></div>
+      <div class="sk-defaults-item"><span class="sk-defaults-num">9.</span> <code>deployment</code> / <code>prod-deploy</code> <span style="margin-left: 4px;">— move safely toward prod</span></div>
+      <div class="sk-defaults-item"><span class="sk-defaults-num">10.</span> <code>knowledge-transfer</code> <span style="margin-left: 4px;">— prepare for handoff</span></div>
+      <div class="sk-defaults-extra">
+        <p>If production setup is involved, add immediately:</p>
+        <ul class="sk-use-list">
+          <li><code>prod-lb-setup</code> — HTTPS LB + SSL + WAF</li>
+          <li><code>gcp-iam</code> — access and permissions</li>
+          <li><code>dns-management</code> — domain routing</li>
+          <li><code>security-defaults</code> — hardening baseline</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 9. WHAT BUILD SHOULD NOT DO ── -->
+  <section class="sk-section">
+    <div class="section-label"><span class="sk-section-num">09</span> What Build Should Not Do With Skills</div>
+
+    <div class="sk-warning">
+      <div class="sk-warning-header">Caution</div>
+      <div class="sk-body">
+        <div class="sk-subsection" style="margin-top: 0;">
+          <div class="sk-sub-id">9.1</div>
+          <div class="sk-sub-title">Do not treat the whole roster as equally important</div>
+          <p>That creates noise, not capability.</p>
+        </div>
+        <div class="sk-subsection">
+          <div class="sk-sub-id">9.2</div>
+          <div class="sk-sub-title">Do not let pipeline visibility become ownership confusion</div>
+          <p>Build should understand the whole Agency flow, but still stay in Build's lane.</p>
+        </div>
+        <div class="sk-subsection">
+          <div class="sk-sub-id">9.3</div>
+          <div class="sk-sub-title">Do not let skills replace judgment</div>
+          <p>Skills are multipliers. They do not replace engineering judgment, delivery judgment, or escalation judgment.</p>
+        </div>
+        <div class="sk-subsection" style="margin-bottom: 0;">
+          <div class="sk-sub-id">9.4</div>
+          <div class="sk-sub-title">Do not let useful thread output replace durable artifacts</div>
+          <p>If something matters after the current conversation, move it into repo, docs, config, or spec.</p>
         </div>
       </div>
     </div>
-
-    <div class="decision-steps">
-      <h4>The Decision Process</h4>
-      <ol class="step-list">
-        <li><span class="step-num">01</span><span>PE qualifies via Path A or Path B (or both)</span></li>
-        <li><span class="step-num">02</span><span>Deliberation with Lead AI Product Engineer — reviews rubric data, working observation, team/client fit</span></li>
-        <li><span class="step-num">03</span><span>If ready: assigned to next available Forward Deploy engagement</span></li>
-        <li><span class="step-num">04</span><span>If not yet ready: specific growth areas identified, PE continues in Applications with targeted stepping-stone opportunities (e.g., co-demo on a client call)</span></li>
-      </ol>
-    </div>
   </section>
 
-  <!-- ── CROSS-CURRENT DEPLOYMENT ── -->
-  <section class="section">
-    <div class="section-label">Cross-Current Deployment</div>
-    <div class="cross-grid">
-      <div class="cross-card">
-        <h4>Pulling someone INTO Build</h4>
-        <p>When Build needs additional capacity and no Build PEs are available, people from other currents (especially ex-developers) are assessed against the Build rubric. Hard Gates only for immediate deployment. Full rubric identifies ramp-up gaps. Both current leads must deliberate before deployment, time-boxed with a review point.</p>
-      </div>
-      <div class="cross-card">
-        <h4>Deploying a Build PE to another current</h4>
-        <p>When a Build PE is needed in another current (supporting Growth with technical demos, helping Taste with engineering-informed reviews), the receiving current's rubric determines readiness. Build PE's existing competencies — especially Client Communication, Product Thinking, and Cross-Current Collaboration — will often translate directly.</p>
+  <!-- ── 10. TRAINING SEQUENCE ── -->
+  <section class="sk-section">
+    <div class="section-label"><span class="sk-section-num">10</span> Suggested Build Training Sequence</div>
+
+    <div class="sk-phase">
+      <div class="sk-phase-num">1</div>
+      <div class="sk-phase-content">
+        <div class="sk-phase-title">Ship Safely</div>
+        <div class="sk-phase-sub">Learn first:</div>
+        <ul class="sk-skill-list">
+            <li><code>project-context</code> <span class="sk-skill-desc">maintain project context</span></li>
+            <li><code>build-planning</code> <span class="sk-skill-desc">plan before coding</span></li>
+            <li><code>coding-agent</code> <span class="sk-skill-desc">implement efficiently</span></li>
+            <li><code>testing</code> <span class="sk-skill-desc">generate useful tests</span></li>
+            <li><code>verification</code> <span class="sk-skill-desc">confirm completion</span></li>
+            <li><code>code-review</code> <span class="sk-skill-desc">review implementation quality</span></li>
+            <li><code>systematic-debugging</code> <span class="sk-skill-desc">debug systematically</span></li>
+          </ul>
       </div>
     </div>
-  </section>
+    <div class="sk-phase-connector"></div>
 
-  
-  <!-- ── TEMPLATE FOR OTHER CURRENTS ── -->
-  <section class="section">
-    <div class="section-label">Template for Other Currents</div>
-    <div style="font-size:13px; color:var(--text-muted); margin-bottom:16px; line-height:1.7;">
-      Other current leads can use this structure to define their own rubrics:
+    <div class="sk-phase">
+      <div class="sk-phase-num">2</div>
+      <div class="sk-phase-content">
+        <div class="sk-phase-title">Handoff and Product Clarity</div>
+        <div class="sk-phase-sub">Then learn:</div>
+        <ul class="sk-skill-list">
+            <li><code>product-spec</code> <span class="sk-skill-desc">capture product intent</span></li>
+            <li><code>update-product-spec</code> <span class="sk-skill-desc">keep specs current</span></li>
+            <li><code>knowledge-transfer</code> <span class="sk-skill-desc">handoff docs</span></li>
+            <li><code>design-handoff</code> <span class="sk-skill-desc">convert design into build context</span></li>
+            <li><code>table-standard</code> <span class="sk-skill-desc">consistent data table UX</span></li>
+          </ul>
+      </div>
     </div>
-    <ol class="template-list">
-      <li><strong>Adopt the 2 General Competencies as-is</strong> (Knowledge Sharing, Cross-Current Collaboration)</li>
-      <li><strong>Define 6–8 current-specific competencies</strong> relevant to your work</li>
-      <li><strong>Use the same 4-tier scale</strong> (Unacceptable / Capable / Adoptive / Transformative)</li>
-      <li><strong>Set your target state</strong> (Adoptive recommended as baseline for all currents)</li>
-      <li><strong>Define any deployment or role-specific readiness indicators</strong> if applicable</li>
-      <li><strong>Include Clue lines and Example Quotes</strong> for each tier to make assessments practical and consistent</li>
-    </ol>
+    <div class="sk-phase-connector"></div>
+
+    <div class="sk-phase">
+      <div class="sk-phase-num">3</div>
+      <div class="sk-phase-content">
+        <div class="sk-phase-title">Production and Infra Safety</div>
+        <div class="sk-phase-sub">Then learn:</div>
+        <ul class="sk-skill-list">
+            <li><code>deployment</code> <span class="sk-skill-desc">deployment patterns</span></li>
+            <li><code>prod-deploy</code> <span class="sk-skill-desc">production deployment</span></li>
+            <li><code>prod-lb-setup</code> <span class="sk-skill-desc">production endpoint hardening</span></li>
+            <li><code>security-defaults</code> <span class="sk-skill-desc">baseline hardening</span></li>
+            <li><code>firebase-setup</code> <span class="sk-skill-desc">Firebase provisioning</span></li>
+            <li><code>gcp-iam</code> <span class="sk-skill-desc">IAM roles</span></li>
+            <li><code>gcp-oauth-setup</code> <span class="sk-skill-desc">OAuth setup for Cloud Run</span></li>
+            <li><code>dns-management</code> <span class="sk-skill-desc">domain records</span></li>
+          </ul>
+      </div>
+    </div>
+    <div class="sk-phase-connector"></div>
+
+    <div class="sk-phase">
+      <div class="sk-phase-num">4</div>
+      <div class="sk-phase-content">
+        <div class="sk-phase-title">Reuse and Systemization</div>
+        <div class="sk-phase-sub">Then learn:</div>
+        <ul class="sk-skill-list">
+            <li><code>skill-creator</code> <span class="sk-skill-desc">create reusable skills</span></li>
+            <li><code>self-improve</code> <span class="sk-skill-desc">reflect and improve workflows</span></li>
+            <li><code>git-tracker</code> <span class="sk-skill-desc">keep projects tracked</span></li>
+            <li><code>update-config</code> <span class="sk-skill-desc">tune harness settings</span></li>
+            <li><code>reconcile-stale</code> <span class="sk-skill-desc">clean stale artifacts</span></li>
+          </ul>
+      </div>
+    </div>
+    <div class="sk-phase-connector"></div>
+
+    <div class="sk-phase">
+      <div class="sk-phase-num">5</div>
+      <div class="sk-phase-content">
+        <div class="sk-phase-title">Build-Adjacent Force Multipliers</div>
+        <div class="sk-phase-sub">Then learn:</div>
+        <ul class="sk-skill-list">
+            <li><code>frontend-design</code> <span class="sk-skill-desc">higher-quality production UI</span></li>
+            <li><code>figma</code> <span class="sk-skill-desc">design analysis and export</span></li>
+            <li><code>posthog</code> <span class="sk-skill-desc">analytics instrumentation</span></li>
+            <li><code>gtm-implementation</code> <span class="sk-skill-desc">tracking setup</span></li>
+            <li><code>seo-setup</code> <span class="sk-skill-desc">search readiness</span></li>
+            <li><code>claude-api</code> <span class="sk-skill-desc">build with Claude / Agent SDK</span></li>
+          </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 11. BOTTOM LINE ── -->
+  <section class="sk-section">
+    <div class="section-label"><span class="sk-section-num">11</span> Bottom Line</div>
+    <div class="sk-closing">
+      <p>For Build, the goal is not "know all 97 skills."</p>
+      <p>The goal is:</p>
+      <ul style="margin: 8px 0 16px 20px; list-style: disc; color: var(--text-muted); font-size: 14px; line-height: 1.7;">
+        <li>know the <strong>right</strong> skills</li>
+        <li>use them at the <strong>right</strong> moment</li>
+        <li>turn repeated use into <strong>better standards and faster delivery</strong></li>
+      </ul>
+      <p>Aria becomes most valuable to Build when her skills improve:</p>
+      <ul style="margin: 8px 0 16px 20px; list-style: disc; color: var(--text-muted); font-size: 14px; line-height: 1.7;">
+        <li>shipping</li>
+        <li>QA</li>
+        <li>production safety</li>
+        <li>recoverability</li>
+        <li>customization leverage</li>
+      </ul>
+      <p><strong>That is where the real compounding happens.</strong></p>
+    </div>
   </section>
 
 
-  
   <!-- ── FOOTER ── -->
-  <footer class="footer">
-    <div class="footer-left">
-      Build Current — The Agency · AI-Native Agency by Symph<br>
-      <span style="font-style:italic; color:var(--text-dim);">This is a living document. V1 establishes the foundation. Refine as The Agency evolves.</span>
-    </div>
-    <div class="footer-right">v1.0 Draft · March 26, 2026</div>
+  <footer style="text-align:center; padding:40px 0 20px; font-size:11px; color:var(--text-dim);">
+    Build Current &middot; The Agency by Symph &middot; v2.1 Draft &middot; March 2026
   </footer>
 
 </div>
 </body>
 </html>
-              <p class="tier-quote">I mapped out how all four of the client’s products should share data and auth. Growth used my architecture diagram in the pitch for the next two projects — client signed both.</p>
-            
