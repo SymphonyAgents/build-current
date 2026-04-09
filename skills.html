@@ -1359,6 +1359,8 @@
           <li><code>mobile-audit</code> <span class="sk-skill-desc">Mobile responsiveness audit and fixes</span></li>
           <li><code>systematic-debugging</code> <span class="sk-skill-desc">Four-phase root cause debugging</span></li>
           <li><code>simplify</code> <span class="sk-skill-desc">Code quality review and cleanup</span></li>
+          <li><code>fix-poisoned-session-jsonl</code> <span class="sk-skill-desc">Fix a crash-looping session caused by cross-model thinking-block contamination in the JSONL transcript</span></li>
+          <li><code>repair-bloated-session-jsonl</code> <span class="sk-skill-desc">Repair a bloated Claude CLI session JSONL causing OOM/SIGKILL crash loops on resume</span></li>
         </ul>
       <div class="sk-use-for">Use for:</div>
         <ul class="sk-use-list">
@@ -1368,6 +1370,7 @@
           <li>responsive/mobile checks</li>
           <li>debugging recurring or unclear failures</li>
           <li>tightening code quality before handoff</li>
+          <li>recovering crash-looping or bloated sessions</li>
         </ul>
     </div>
 
@@ -1415,6 +1418,9 @@
           <li><code>firestore-indexes</code> <span class="sk-skill-desc">Automate Firestore composite index management</span></li>
           <li><code>inject-secret</code> <span class="sk-skill-desc">Fetches a secret from GCP Secret Manager and bakes it into a product's MEMORY.md</span></li>
           <li><code>register-secret</code> <span class="sk-skill-desc">Registers a product API key in the aria-secrets allowlist</span></li>
+          <li><code>cloud-build</code> <span class="sk-skill-desc">Correct procedures for checking GCP Cloud Build status, history, and trigger configuration</span></li>
+          <li><code>gcp-logging</code> <span class="sk-skill-desc">Translates user questions into correct GCP Cloud Logging queries for Cloud Run, Firestore, Firebase</span></li>
+          <li><code>prod-security-gate</code> <span class="sk-skill-desc">Add, update, or remove password-protected portals on the symph-portal platform</span></li>
         </ul>
       <div class="sk-use-for">Use for:</div>
         <ul class="sk-use-list">
@@ -1428,6 +1434,8 @@
           <li>mobile CI/CD setup and iOS bundle provisioning</li>
           <li>Firestore index automation</li>
           <li>wiring API keys and secrets into products safely</li>
+          <li>monitoring Cloud Build pipelines and querying GCP logs</li>
+          <li>password-protecting portals and client deliverables</li>
         </ul>
       <div class="sk-special-note">
         <strong>Special note: <code style="background:transparent;border:none;padding:0;font-size:12px;">prod-lb-setup</code></strong><br>
@@ -1565,6 +1573,8 @@
           <li><code>currents-bridge</code> <span class="sk-skill-desc">Post Currents drops for team members</span></li>
           <li><code>discord-channel-manager</code> <span class="sk-skill-desc">Manage Discord channels and threads</span></li>
           <li><code>wiki-consolidation</code> <span class="sk-skill-desc">Consolidate bloated wiki pages into well-structured, thematic sub-pages</span></li>
+          <li><code>weekly-changelog</code> <span class="sk-skill-desc">Generate and post a weekly changelog of all Aria and Symphony changes to Discord</span></li>
+          <li><code>last30days</code> <span class="sk-skill-desc">Research any topic across Reddit, X, YouTube, HN, and the web from the last 30 days</span></li>
         </ul>
       <div class="sk-use-for">Use for:</div>
         <ul class="sk-use-list">
@@ -1615,6 +1625,13 @@
           <li><code>content-review-board</code> <span class="sk-skill-desc">Multi-perspective expert review of marketing and content</span></li>
           <li><code>researcher</code> <span class="sk-skill-desc">Deep-research skill for leads, companies, and people</span></li>
           <li><code>symph-crm</code> <span class="sk-skill-desc">Governs all interactions with Symph CRM for deals, notes, contacts, and pipeline</span></li>
+          <li><code>ad-copywriter</code> <span class="sk-skill-desc">Writes paid ad copy grounded in the product's brand positioning and messaging playbook</span></li>
+          <li><code>ads-brief</code> <span class="sk-skill-desc">Generate creative briefs for ad campaigns with hook, copy, and visual variants</span></li>
+          <li><code>ads-positioning</code> <span class="sk-skill-desc">Discover and score positioning angles before writing ad copy</span></li>
+          <li><code>ads-prepare</code> <span class="sk-skill-desc">Generate a complete, ready-to-paste ad campaign setup for any platform</span></li>
+          <li><code>ads-research</code> <span class="sk-skill-desc">Deep market and competitor research for ad campaigns</span></li>
+          <li><code>ads-review</code> <span class="sk-skill-desc">Pre-flight quality check for ad campaigns before launch</span></li>
+          <li><code>ad-strategist</code> <span class="sk-skill-desc">Paid advertising campaign strategist for Meta, LinkedIn, Google, X, and TikTok</span></li>
         </ul>
       <div class="sk-care-why">
         <strong>Why use with care:</strong> Build may support these, but Growth owns messaging, demand, and outbound.
@@ -1630,6 +1647,9 @@
           <li><code>openai-models</code> <span class="sk-skill-desc">OpenAI model access: GPT-5.4, o3, o4-mini</span></li>
           <li><code>posthog-admin</code> <span class="sk-skill-desc">PostHog org management</span></li>
           <li><code>fms-accounting-conformance</code> <span class="sk-skill-desc">Validates that code changes to FindMyShots Finance conform to the accounting system model</span></li>
+          <li><code>crm-ingest</code> <span class="sk-skill-desc">Ingest a raw source (meeting notes, transcripts, emails) into a specific CRM deal</span></li>
+          <li><code>crm-lint</code> <span class="sk-skill-desc">Health-check the Symph CRM wiki vault for staleness, orphans, contradictions, and coverage gaps</span></li>
+          <li><code>crm-query</code> <span class="sk-skill-desc">Cross-wiki synthesis for the Symph CRM knowledge base across deals, companies, and contacts</span></li>
         </ul>
       <div class="sk-care-why">
         <strong>Why use with care:</strong> Useful in implementation, but may involve shared systems, cost, admin access, or non-Build ownership.
@@ -1842,6 +1862,8 @@
             <li><code>firestore-indexes</code> <span class="sk-skill-desc">Firestore index automation</span></li>
             <li><code>inject-secret</code> <span class="sk-skill-desc">wire secrets into product MEMORY.md</span></li>
             <li><code>register-secret</code> <span class="sk-skill-desc">register keys in aria-secrets allowlist</span></li>
+            <li><code>cloud-build</code> <span class="sk-skill-desc">monitor Cloud Build status and history</span></li>
+            <li><code>gcp-logging</code> <span class="sk-skill-desc">query GCP logs for Cloud Run and Firebase</span></li>
           </ul>
       </div>
     </div>
